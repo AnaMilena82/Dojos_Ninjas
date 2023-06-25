@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dojos y Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex align-items-center p-3 my-3 bg-warning rounded shadow-sm">
+            <div class="p-2 flex-grow-1">
+                <h1 class="m-4"> {{dojo.name}} Ninjas </h1>
+            </div>
+            
+        </div>
+        <table class="table table-success table-striped">
+            <tr>
+                
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                
+            </tr>
+            {% for ninja in ninjas %}
+                <tr>
+                    <td> {{ninja.first_name}} </td>
+                    <td> {{ninja.last_name}}</td>
+                    <td>{{ninja.age}}</td>
+                </tr>
+            {% endfor %}
+        </table>  
+        <a href="{{ url_for('get_dojos')}}" class="me-2">Home</a>
+         
+    </div>
+    <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+        <p class="mb-1">&copy; By Ana Milena Chaverra Castaño</p>
+        
+    </footer>
+</body>
+</html>
+
